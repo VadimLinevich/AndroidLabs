@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:gravity="center|end"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#E44BFFD5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:popupBackground="#E44BFFD5"
+            android:textAlignment="center" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="120dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="31dp"
+        android:background="#D1D4D5"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout">
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="120dp"
+            android:layout_height="65dp"
+            android:popupBackground="#D1D4D5" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_width="120dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="31dp"
+        android:background="#D1D4D5"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout2">
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="120dp"
+            android:layout_height="65dp"
+            android:popupBackground="#D1D4D5" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="120dp"
+        android:background="#E44BFFD5"
+        android:ems="10"
+        android:gravity="center|end"
+        android:inputType="numberDecimal"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

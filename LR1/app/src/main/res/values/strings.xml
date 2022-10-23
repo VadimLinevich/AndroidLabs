@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="categoryNames">
+        <item>Length</item>
+        <item>Weight</item>
+        <item>Speed</item>
+    </string-array>
+
+    <string-array name="LengthNames">
+        <item>Centimetre</item>
+        <item>Metre</item>
+        <item>Kilometre</item>
+    </string-array>
+
+    <string-array name="WeightNames">
+        <item>Gram</item>
+        <item>Kilogram</item>
+        <item>Tonne</item>
+    </string-array>
+
+    <string-array name="SpeedNames">
+        <item>M/s</item>
+        <item>Km/s</item>
+        <item>Km/h</item>
+    </string-array>
+
+</resources>
