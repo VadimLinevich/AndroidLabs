@@ -22,22 +22,26 @@
             <Button
                 android:id="@+id/button1"
                 style="@style/ActionButton"
-                android:text="1" />
+                android:text="C"
+                android:textColor="#FF0000" />
 
             <Button
                 android:id="@+id/button2"
                 style="@style/ActionButton"
-                android:text="2" />
+                android:text="()" />
 
             <Button
                 android:id="@+id/button3"
                 style="@style/ActionButton"
-                android:text="3" />
+                android:text="%" />
 
             <Button
                 android:id="@+id/button4"
                 style="@style/ActionButton"
-                android:text="C" />
+                app:icon="@drawable/backspace"
+                app:iconGravity="textTop"
+                app:iconPadding="0dp"
+                app:iconTint="@color/black" />
 
         </LinearLayout>
 
@@ -50,24 +54,22 @@
             <Button
                 android:id="@+id/button5"
                 style="@style/ActionButton"
-                android:text="4" />
+                android:text="1" />
 
             <Button
                 android:id="@+id/button6"
                 style="@style/ActionButton"
-                android:text="5" />
+                android:text="2" />
 
             <Button
                 android:id="@+id/button7"
                 style="@style/ActionButton"
-                android:text="6" />
+                android:text="3" />
 
             <Button
                 android:id="@+id/button8"
                 style="@style/ActionButton"
-                app:icon="@drawable/backspace"
-                app:iconGravity="textTop"
-                app:iconPadding="0dp">
+                android:text="÷">
 
             </Button>
 
@@ -82,24 +84,22 @@
             <Button
                 android:id="@+id/button9"
                 style="@style/ActionButton"
-                android:text="7" />
+                android:text="4" />
 
             <Button
                 android:id="@+id/button10"
                 style="@style/ActionButton"
-                android:text="8" />
+                android:text="5" />
 
             <Button
                 android:id="@+id/button11"
                 style="@style/ActionButton"
-                android:text="9" />
+                android:text="6" />
 
             <Button
                 android:id="@+id/button12"
                 style="@style/ActionButton"
-                app:icon="@drawable/paste"
-                app:iconGravity="textTop"
-                app:iconPadding="0dp" />
+                android:text="×" />
 
         </LinearLayout>
 
@@ -112,26 +112,50 @@
             <Button
                 android:id="@+id/button13"
                 style="@style/ActionButton"
-                app:icon="@drawable/viceversa"
-                app:iconGravity="textTop"
-                app:iconPadding="0dp" />
+                android:text="7" />
 
             <Button
                 android:id="@+id/button14"
                 style="@style/ActionButton"
-                android:text="0" />
+                android:text="8" />
 
             <Button
                 android:id="@+id/button15"
                 style="@style/ActionButton"
-                android:text="." />
+                android:text="9" />
 
             <Button
                 android:id="@+id/button16"
                 style="@style/ActionButton"
-                app:icon="@drawable/copy"
-                app:iconGravity="textTop"
-                app:iconPadding="0dp" />
+                android:text="-" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button17"
+                style="@style/ActionButton"
+                android:text="," />
+
+            <Button
+                android:id="@+id/button18"
+                style="@style/ActionButton"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/button19"
+                style="@style/ActionButton"
+                android:text="=" />
+
+            <Button
+                android:id="@+id/button20"
+                style="@style/ActionButton"
+                android:text="+" />
 
         </LinearLayout>
 

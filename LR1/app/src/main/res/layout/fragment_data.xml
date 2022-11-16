@@ -12,6 +12,7 @@
         android:layout_height="70dp"
         android:layout_marginEnd="3dp"
         android:gravity="center|end"
+        android:maxLength="16"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
@@ -84,6 +85,7 @@
         android:ems="10"
         android:gravity="center|end"
         android:inputType="none"
+        android:maxLength="16"
         android:singleLine="true"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

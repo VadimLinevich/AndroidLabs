@@ -8,9 +8,7 @@ import android.content.Context.CLIPBOARD_SERVICE
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.*
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
@@ -66,6 +64,19 @@ class DataFragment : Fragment() {
         val weightnames = resources.getStringArray(R.array.WeightNames)
         val speednames = resources.getStringArray(R.array.SpeedNames)
         edittext1.showSoftInputOnFocus = false
+        edittext1.customSelectionActionModeCallback = object : ActionMode.Callback {
+            override fun onPrepareActionMode(mode: ActionMode, menu: Menu): Boolean {
+                menu.clear()
+                return false
+            }
+            override fun onDestroyActionMode(mode: ActionMode) {}
+            override fun onCreateActionMode(mode: ActionMode, menu: Menu): Boolean {
+                return true
+            }
+            override fun onActionItemClicked(mode: ActionMode, item: MenuItem): Boolean {
+                return false
+            }
+        }
         ArrayAdapter.createFromResource(
             view.context,
             R.array.categoryNames,
@@ -154,79 +165,175 @@ class DataFragment : Fragment() {
                     }
                     else {
                         if (spinner2.selectedItem.toString() == spinner3.selectedItem.toString()) {
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[2] && spinner3.selectedItem.toString() == lengthnames[1]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[2] && spinner3.selectedItem.toString() == lengthnames[0]) {
                             value *= 100000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[1] && spinner3.selectedItem.toString() == lengthnames[2]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[1] && spinner3.selectedItem.toString() == lengthnames[0]) {
                             value *= 100
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[0] && spinner3.selectedItem.toString() == lengthnames[2]) {
                             value /= 100000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[0] && spinner3.selectedItem.toString() == lengthnames[1]) {
                             value /= 100
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[2] && spinner3.selectedItem.toString() == weightnames[1]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[2] && spinner3.selectedItem.toString() == weightnames[0]) {
                             value *= 1000000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[1] && spinner3.selectedItem.toString() == weightnames[2]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[1] && spinner3.selectedItem.toString() == weightnames[0]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[0] && spinner3.selectedItem.toString() == weightnames[2]) {
                             value /= 1000000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[0] && spinner3.selectedItem.toString() == weightnames[1]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[2] && spinner3.selectedItem.toString() == speednames[1]) {
                             value /= 3600
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[2] && spinner3.selectedItem.toString() == speednames[0]) {
                             value /= 3.6
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[1] && spinner3.selectedItem.toString() == speednames[2]) {
                             value *= 3600
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[1] && spinner3.selectedItem.toString() == speednames[0]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[0] && spinner3.selectedItem.toString() == speednames[2]) {
                             value *= 3.6
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[0] && spinner3.selectedItem.toString() == speednames[1]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                     }
                 }
@@ -252,79 +359,175 @@ class DataFragment : Fragment() {
                     }
                     else {
                         if (spinner2.selectedItem.toString() == spinner3.selectedItem.toString()) {
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[2] && spinner3.selectedItem.toString() == lengthnames[1]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[2] && spinner3.selectedItem.toString() == lengthnames[0]) {
                             value *= 100000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[1] && spinner3.selectedItem.toString() == lengthnames[2]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[1] && spinner3.selectedItem.toString() == lengthnames[0]) {
                             value *= 100
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[0] && spinner3.selectedItem.toString() == lengthnames[2]) {
                             value /= 100000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[0] && spinner3.selectedItem.toString() == lengthnames[1]) {
                             value /= 100
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[2] && spinner3.selectedItem.toString() == weightnames[1]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[2] && spinner3.selectedItem.toString() == weightnames[0]) {
                             value *= 1000000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[1] && spinner3.selectedItem.toString() == weightnames[2]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[1] && spinner3.selectedItem.toString() == weightnames[0]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[0] && spinner3.selectedItem.toString() == weightnames[2]) {
                             value /= 1000000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[0] && spinner3.selectedItem.toString() == weightnames[1]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[2] && spinner3.selectedItem.toString() == speednames[1]) {
                             value /= 3600
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[2] && spinner3.selectedItem.toString() == speednames[0]) {
                             value /= 3.6
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[1] && spinner3.selectedItem.toString() == speednames[2]) {
                             value *= 3600
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[1] && spinner3.selectedItem.toString() == speednames[0]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[0] && spinner3.selectedItem.toString() == speednames[2]) {
                             value *= 3.6
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[0] && spinner3.selectedItem.toString() == speednames[1]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                     }
                 }
@@ -355,79 +558,169 @@ class DataFragment : Fragment() {
                     }
                     else {
                         if (spinner2.selectedItem.toString() == spinner3.selectedItem.toString()) {
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[2] && spinner3.selectedItem.toString() == lengthnames[1]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[2] && spinner3.selectedItem.toString() == lengthnames[0]) {
                             value *= 100000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[1] && spinner3.selectedItem.toString() == lengthnames[2]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[1] && spinner3.selectedItem.toString() == lengthnames[0]) {
                             value *= 100
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[0] && spinner3.selectedItem.toString() == lengthnames[2]) {
                             value /= 100000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == lengthnames[0] && spinner3.selectedItem.toString() == lengthnames[1]) {
                             value /= 100
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[2] && spinner3.selectedItem.toString() == weightnames[1]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[2] && spinner3.selectedItem.toString() == weightnames[0]) {
                             value *= 1000000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[1] && spinner3.selectedItem.toString() == weightnames[2]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[1] && spinner3.selectedItem.toString() == weightnames[0]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[0] && spinner3.selectedItem.toString() == weightnames[2]) {
                             value /= 1000000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == weightnames[0] && spinner3.selectedItem.toString() == weightnames[1]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[2] && spinner3.selectedItem.toString() == speednames[1]) {
                             value /= 3600
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[2] && spinner3.selectedItem.toString() == speednames[0]) {
                             value /= 3.6
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[1] && spinner3.selectedItem.toString() == speednames[2]) {
                             value *= 3600
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[1] && spinner3.selectedItem.toString() == speednames[0]) {
                             value *= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                         if (spinner2.selectedItem.toString() == speednames[0] && spinner3.selectedItem.toString() == speednames[2]) {
                             value *= 3.6
-                            textview1.setText(value.toString())
+                            textview1.setText(value.toBigDecimal().toPlainString())
                         }
                         if (spinner2.selectedItem.toString() == speednames[0] && spinner3.selectedItem.toString() == speednames[1]) {
                             value /= 1000
-                            textview1.setText(value.toString())
+                            if (value.toBigDecimal().toPlainString().length <= 16) {
+                                textview1.setText(value.toBigDecimal().toPlainString())
+                            }
+                            else
+                            {
+                                textview1.setText("Too big value")
+                            }
                         }
                     }
                 }
@@ -447,18 +740,30 @@ class DataFragment : Fragment() {
             1 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "1", 0, 1)
                 }
             }
             2 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "2", 0, 1)
                 }
             }
             3 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "3", 0, 1)
                 }
             }
@@ -473,18 +778,30 @@ class DataFragment : Fragment() {
             5 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "4", 0, 1)
                 }
             }
             6 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "5", 0, 1)
                 }
             }
             7 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "6", 0, 1)
                 }
             }
@@ -505,40 +822,63 @@ class DataFragment : Fragment() {
             9 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "7", 0, 1)
                 }
             }
             10 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "8", 0, 1)
                 }
             }
             11 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "9", 0, 1)
                 }
             }
             12 -> {
-                if(edittext1.isFocused == true)
+                val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val item = clipboard.primaryClip?.getItemAt(0)
+                if (item != null)
                 {
-                    if(edittext1.text.toString() != "") {
-                        val clipboard = activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                        val clip: ClipData = ClipData.newPlainText("label", edittext1.text.toString())
-                        clipboard.setPrimaryClip(clip)
-                        Toast.makeText(activity?.applicationContext, "Start value copied to the clipboard", Toast.LENGTH_SHORT).show()
+                    if (item.text.toString().toDoubleOrNull() != null) {
+                        if (item.text.toString().contains(".") && edittext1.text.toString().contains("."))
+                        {
+                            Toast.makeText(activity?.applicationContext, "Incorrect clipboard value", Toast.LENGTH_SHORT).show()
+                        }
+                        else {
+                            edittext1.text.replace(
+                                min(start, end),
+                                max(start, end),
+                                item.text,
+                                0,
+                                item.text.length
+                            )
+                        }
                     }
                     else
                     {
-                        Toast.makeText(activity?.applicationContext, "Incorrect value", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity?.applicationContext, "Clipboard value is not a number", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
             13 -> {
-                val temp1 = textview1.text
+                /*val temp1 = textview1.text
                 textview1.setText(edittext1.text)
-                edittext1.setText(temp1)
+                edittext1.setText(temp1)*/
                 val temp2 = spinner2.selectedItemId.toInt()
                 spinner2.setSelection(spinner3.selectedItemId.toInt())
                 spinner3.setSelection(temp2)
@@ -546,12 +886,20 @@ class DataFragment : Fragment() {
             14 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), "0", 0, 1)
                 }
             }
             15 -> {
                 if(edittext1.isFocused == true)
                 {
+                    if (edittext1.text.length == 16)
+                    {
+                        Toast.makeText(activity?.applicationContext, "The number of the maximum length is entered", Toast.LENGTH_SHORT).show()
+                    }
                     edittext1.text.replace(min(start, end), max(start, end), ".", 0, 1)
                     if(edittext1.text.toString().count { it == '.' } == 2)
                     {

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KeyboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="350dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button31"
+                style="@style/ActionButton"
+                android:text="asin"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button21"
+                style="@style/ActionButton"
+                android:text="√"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button22"
+                style="@style/ActionButton"
+                android:text="π"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/ActionButton"
+                android:text="1"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/ActionButton"
+                android:text="2"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/ActionButton"
+                android:text="3"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/ActionButton"
+                android:text="÷"
+                android:textSize="15sp"
+                >
+
+            </Button>
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/ActionButton"
+                android:text="C"
+                android:textColor="#FF0000"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button32"
+                style="@style/ActionButton"
+                android:text="acos"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button23"
+                style="@style/ActionButton"
+                android:text="^"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button24"
+                style="@style/ActionButton"
+                android:text="!"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/ActionButton"
+                android:text="4"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/ActionButton"
+                android:text="5"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/ActionButton"
+                android:text="6"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/ActionButton"
+                android:text="×"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/ActionButton"
+                android:text="()"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button25"
+                style="@style/ActionButton"
+                android:text="sin"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button26"
+                style="@style/ActionButton"
+                android:text="cos"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button27"
+                style="@style/ActionButton"
+                android:text="tan"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/ActionButton"
+                android:text="7"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button14"
+                style="@style/ActionButton"
+                android:text="8"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button15"
+                style="@style/ActionButton"
+                android:text="9"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button16"
+                style="@style/ActionButton"
+                android:text="-"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/ActionButton"
+                android:text="%"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button28"
+                style="@style/ActionButton"
+                android:text="e"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button29"
+                style="@style/ActionButton"
+                android:text="ln"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button30"
+                style="@style/ActionButton"
+                android:text="lg"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/button17"
+                style="@style/ActionButton"
+                android:text=","
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button18"
+                style="@style/ActionButton"
+                android:text="0"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/ActionButton"
+                app:icon="@drawable/backspace"
+                app:iconGravity="textTop"
+                app:iconPadding="0dp"
+                app:iconSize="15sp"
+                app:iconTint="@color/black" />
+
+            <Button
+                android:id="@+id/button20"
+                style="@style/ActionButton"
+                android:text="+"
+                android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/button19"
+                style="@style/ActionButton"
+                android:text="="
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
